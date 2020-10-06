@@ -16,18 +16,30 @@ function addTodo(event) {
     //get text from textBox
     let newTodoText = $textBox.value
     console.log(newTodoText)
+    //reset textBox
+    $textBox.value = ''
     //create new list item
     let $newTodoItem = document.createElement('li')
     //use String template with backticks
-    $newTodoItem.innerHTML = `<li>${newTodoText}<button onclick='taskDone(event)'>Done</button></li>`
+    $newTodoItem.innerHTML =
+        `${newTodoText} &nbsp;
+        <button onclick='taskDone(event)'>Done</button> &nbsp;
+        <button onclick='deleteTask(event)'>Delete</button>`
     //put list item in list
     $list.append($newTodoItem)
 }
 
 function taskDone(event) {
-    //event.target is the element that was clicked
-    console.log(event.target)
-    $completed.append(event.target)
+    //event.target is the button that was clicked
+    let $listItem = event.target.parentElement
+    console.log($listItem)
+    event.target.remove()
+    $listItem.style.textDecoration = 'line-through'
+    $completed.append($listItem)
+}
+
+function deleteTask(event) {
+    event.target.parentElement.remove()
 }
 
 //1. variable for heading element
