@@ -2,3 +2,6 @@ body {
     background-color: navy;
     color: white;
 }
+#addTodo:active {
+    background-color: red;
+}

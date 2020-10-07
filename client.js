@@ -1,53 +1,33 @@
-console.log('There is no try, only do')
+console.log("hello world")
 
-//create variables for page elements
-let $button = document.getElementById('addTodo')
-let $textBox = document.getElementById('userInput')
-let $list = document.getElementById('list')
-let $completed = document.getElementById('completed')
-//add click event handler on button
-$button.onclick = addTodo
+// create variable for button element
+let button = document.getElementById('addTodo')
+// link the button to the action of the function
+button.onclick = addTodo
 
-//define the button click handler
-function addTodo(event) {
-    console.log("button was clicked")
-    $button.style.backgroundColor = 'red'
+let textBox = document.getElementById('userInput')
+let list = document.getElementById('list')
 
-    //get text from textBox
-    let newTodoText = $textBox.value
-    console.log(newTodoText)
-    //reset textBox
-    $textBox.value = ''
+
+function addTodo() {
+    console.log("button clicked")
+    // button.style.backgroundColor = 'red'
+
+    // get new text from textbox
+    let newTodoText = textBox.value
     //create new list item
-    let $newTodoItem = document.createElement('li')
-    //use String template with backticks
-    $newTodoItem.innerHTML =
-        `${newTodoText} &nbsp;
-        <button onclick='taskDone(event)'>Done</button> &nbsp;
-        <button onclick='deleteTask(event)'>Delete</button>`
+    let newTodo = document.createElement('li')
+    newTodo.innerHTML = newTodoText
     //put list item in list
-    $list.append($newTodoItem)
+    list.append(newTodo)
 }
 
-function taskDone(event) {
-    //event.target is the button that was clicked
-    let $listItem = event.target.parentElement
-    console.log($listItem)
-    event.target.remove()
-    $listItem.style.textDecoration = 'line-through'
-    $completed.append($listItem)
-}
+// variable for h1
+let h1 = document.getElementById('h1')
+// connect changeColor function as click handler
 
-function deleteTask(event) {
-    event.target.parentElement.remove()
-}
-
-//1. variable for heading element
-let $head = document.querySelector('h1')
-//2. set 'changeColor' function as click handler on heading
-$head.onclick = changeColor
-//3.a define 'changeColor' function
+// define changecolor function
 function changeColor() {
-    //3.b. set color (text) of heading to red
-    $head.style.color = 'red'
+    // set color of text to yellow
+
 }
