@@ -16,12 +16,22 @@ h3 {
     text-align: left;
 }
 
+ul {
+    text-align: left;
+}
+
 #addTodo {
     background-color: white;
+    color: rgb(102, 140, 255);
 }
 #addTodo:hover {
     background-color: rgba(211, 211, 211, 1);
 }
 #addTodo:active {
-    background-color: red;
+    background-color: rgb(0, 51, 204);
+}
+
+#taskButton {
+    color: rgb(102, 140, 255);
+    background-color: white;
 }
