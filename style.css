@@ -1,6 +1,26 @@
 body {
-    background-color: navy;
+    background-color: rgb(0, 51, 204);
     color: white;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+main {
+    background-color: rgb(102, 140, 255);
+    border: 5px solid rgb(217, 217, 217);
+    padding: 10px;
+}
+
+h3 {
+    text-align: left;
+}
+
+#addTodo {
+    background-color: white;
+}
+#addTodo:hover {
+    background-color: rgba(211, 211, 211, 1);
 }
 #addTodo:active {
     background-color: red;
